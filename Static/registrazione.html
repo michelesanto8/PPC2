@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrazione</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            display: flex;
+            position:fixed;
+            font-family: "Poppins" , sans-serif;
+            font-size: 25px;
+            background-color: #154c79;
+        }
+         .logo {
+             font-size: 50px;
+             font-family: Impact, Charcoal, sans-serif;
+             color: rgb(147, 175, 203);
+             text-shadow: 2px 3px 4px #bb7979;
+        }
+            ul#menu li {
+            background-color: #93afcb;
+            border-bottom: 5px solid #ffffff;
+            display: block;
+            width: 150px;
+            height: 30px;
+            margin: 2px;
+        }
+        ul#menu li a {
+            color: #fff;
+            display: block;
+            font-weight: bold;
+            line-height: 30px;
+            text-decoration: none;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+        }
+        ul#menu li.active, ul#menu li:hover {
+            background-color: #93afcb;
+            border-bottom: 5px solid #ffffff;
+        }
+        .pulsante {
+            padding: 60px;
+            position:fixed;
+            top:500px;
+            left:480px;
+            cursor: pointer;
+            align-items: center;
+            background-color: #010201;
+            width: 30%;
+            color: #feffff;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-family: "Poppins" , sans-serif;
+        }
+        .input {
+            position:relative;
+            top:250px;
+            left:-15px;
+            font-size: 15px;
+            width: 305px;
+            padding: 15px 50px 12px 70px;
+            border: none;
+            margin-top:10px;
+            font-family: "Poppins" , sans-serif;
+            background-color: rgba(248, 250, 248, 0.79);
+        }
+    </style>
+</head>
+<body>
+<ul id="menu" style="position:fixed;left:1100px;top:0px;">
+    <li>
+        <a href="/static/registraovisualizza.html">Home</a>
+    </li>
+    <li class="active"><a href="/logout">Logout</a></li>
+</ul>
+<header class="fixed">
+    <nav class="top-bar">
+        <ul class="title-area">
+            <h1 class ="logo" >HEALTHDATA</h1>
+        </ul>
+    </nav>
+</header>
+<form class="form" method="post" action="/register">
+    <h1 style="position:relative;top:250px;left:100px;color: #f8f8f7;">REGISTRAZIONE UTENTE</h1>
+       <input type="text" placeholder="Nome utente" name="u" class="input" align="center">
+       <input type="password" placeholder="Password" name="p" class="input">
+       <form action="/register" method="POST" >
+       <button onclick="showSuccessMessage()" type="submit" name="login" class="pulsante" align="center">Registra l'utente</button>
+        </form>
+   </form>
+<script>
+  function showSuccessMessage() {
+    alert("Registrazione effettuata con successo!");
+  }
+
+
+</script>
+</body>
+</html>

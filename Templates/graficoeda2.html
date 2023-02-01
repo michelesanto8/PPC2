@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="3" >
+    <title>Grafico Grafico Electrodermal activity</title>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable({{eda|safe}});
+                var options = {
+                curveType: 'function',
+                width: 1100, height: 500,
+                chartArea: {width: '80%', height: '50%'} ,
+                legend: { position: 'top' }, hAxis:{slantedText:true, slantedTextAngle:45, showTextEvery: '1', textPosition: 'out'},
+                pointSize: 5,
+                pointShape: 'square'
+                };
+                var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+                chart.draw(data, options);
+            }
+        </script>
+</head>
+<style>
+    body{
+        background-color: #154c79;
+        color: white;
+        font-family: "Poppins" , sans-serif;
+        color: #feffff;
+        font-size: 30px;
+        }
+    .anomalia {
+        position:relative;
+        top:-20px;
+        align:center;
+        animation:blink 1s linear infinite;
+        color: rgba(27, 201, 69, 0.73);
+    }
+    .logo {
+        font-size: 50px;
+        font-family: Impact, Charcoal, sans-serif;
+        color: rgb(147, 175, 203);
+        text-shadow: 2px 3px 4px #bb7979;
+        position:relative;
+        left:50px;
+        top:-100px;
+    }
+    ul#menu li {
+        background-color: #93afcb;
+        border-bottom: 5px solid #ffffff;
+        display: block;
+        width: 150px;
+        height: 30px;
+        margin: 2px;
+    }
+    ul#menu li a {
+        color: #ffffff;
+        text-justify: left;
+        white-space: nowrap;
+        display: block;
+        font-size:20px;
+        line-height: 30px;
+        text-decoration: none;
+        width: 150px;
+        height: 30px;
+        text-align: center;
+    }
+        ul#menu li.active, ul#menu li:hover {
+            background-color: #000000;
+            border-bottom: 5px solid #ffffff;
+    }
+</style>
+    <body>
+    <ul id="menu" style="z-index:1;position:relative;left:1100px;top:0px;">
+        <li>
+            <a href="/static/visualizzaGrafici.html">
+                <b>Home</b>
+            </a>
+        </li>
+        <li>
+            <a href="/logout">
+                <b>Logout</b>
+            </a>
+    </ul>
+        </b>
+        <header class="fixed">
+            <h1 class ="logo">HEALTHDATA</h1>
+        </header>
+            <div style="margin:auto; position:relative;top:-80px;text-align:center;height:900px;width:1200px;border:10px solid #0f6fd0;border-radius: 20px 20px 20px 20px;background-color: white;overflow:auto">
+                    <u>
+                        <h1 style="position: relative;top:20px;color:#93afcb;">ELECTRODERMAL ACTIVITY</h1>
+                    </u>
+                <table bgcolor="white" style="position:relative;top:65px;left:80px;border-radius: 10px 10px 10px 10px;border:5px solid #93afcb;">
+            <tr>
+                <td>
+                    <h3 style="text-align:center;color: rgb(147,175,203);">MEDIA
+                    </h3>
+                    <p style="text-align:center;color: rgb(147,175,203);">{{mediaeda}}
+                    </p>
+                </td>
+                <td>
+                    <h3 style="text-align:center;color: rgb(147,175,203);">MINIMO
+                    </h3>
+                    <p style="text-align:center;color: rgb(147,175,203);">{{minimoeda}}
+                    </p>
+                </td>
+                <td>
+                    <h3 style="text-align:center;color: rgb(147,175,203);">MASSIMO
+                    </h3>
+                    <p style="text-align:center;color: rgb(147,175,203);">{{massimoeda}}
+                    </p>
+                </td>
+            </tr>
+</table>
+               <div style="position:relative;top:-130px;left:700px;text-align:center;height:180px;width:400px;border:10px solid rgba(27,201,69,0.73);border-radius: 20px 20px 20px 20px;background-color: white;overflow:auto">
+        <font color="#b70d0d">
+            <h2 class="anomalia">NESSUNA ANOMALIA RILEVATA!</h2>
+        </font>
+    </div>
+    <div>
+        <b><p style="position:relative;text-align:center;top:-100px;color:#93afcb;">GRAFICO
+        </p></b>
+        <div style="position:relative;top:-10px;background-color: #93afcb" id="curve_chart" align="center">
+        </div>
+    </div>
+        </div>
+    </body>
+</html>

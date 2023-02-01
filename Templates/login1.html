@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style type="text/css">
+        body{
+            position:relative;
+            top:150px;
+            left: 50px;
+            overflow: hidden;
+            font-family: "Poppins" , sans-serif;
+            font-size: 20px;
+            background-image: URL("immagine2.png");
+            background-position-x: -100px;
+            background-position-y: -70px;
+        }
+        .pulsante {
+            position: relative;
+            left: 200px;
+            padding: 15px 70px 12px 40px;
+            border: none;
+            cursor: pointer;
+            align-items: center;
+            background-color: #010201;
+            width: 40%;
+            color: #f8f8f7;
+            padding: 10px 0px;
+            font-size: 20px;
+            margin: 20px 0px;
+            font-family: "Poppins" , sans-serif;
+            }
+        .input {
+            position: relative;
+            left: 130px;
+            background-position: 0px 10px;
+            font-size: 15px;
+            width: 40%;
+            padding: 15px 70px 12px 70px;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            font-family: "Poppins" , sans-serif;
+            background-color: rgba(248, 250, 248, 0.79);
+          }
+        .logo {
+            font-size: 50px;
+            position:relative;
+            top:-130px;
+            left:30px;
+            color: rgba(248, 250, 248, 0.79);
+        }
+        .rect{
+            width:500px;
+            height:90px;
+            border:5px;
+            background-color: #010201;
+            color: rgb(254, 255, 255);
+            position:relative;
+            left: 75px;
+            text-align: center;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="logo"><b>HEALTHDATA</b></div>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <form action="/loginadmin" method="post">
+                <h1 class="rect">LOGIN AMMINISTRATORE</h1>
+                <input type="text" placeholder="Username@gmail.com" name="u" class="input">
+                <input type="password" placeholder="Password" name="p" class="input">
+                <button type="submit" name="login" class="pulsante" align="center">Accedi</button>
+            </form>
+        </td>
+        <td>
+            <form action="/login" method="post">
+                <h1 class="rect" style="position:relative;left:80px;text-align: center;">LOGIN <br> UTENTE</h1>
+                <input type="text" placeholder="Username" name="u" class="input">
+                <input type="password" placeholder="Password" name="p" class="input">
+                <button type="submit" name="login" class="pulsante" align="center">Accedi</button>
+            </form>
+            <div class="error-messages">
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</div>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

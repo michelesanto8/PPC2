@@ -1,0 +1,5 @@
+flask
+flask-login
+google-cloud-firestore
+google~=3.0.0
+requests~=2.28.1

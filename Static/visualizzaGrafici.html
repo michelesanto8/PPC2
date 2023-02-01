@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualizzazione grafici</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #154c79;
+            overflow: hidden;
+            font-family: "Poppins" , sans-serif;
+            color: #feffff;
+            font-size: 20px;
+        }
+        .logo {
+            font-size: 50px;
+            font-family: Impact, Charcoal, sans-serif;
+            color: rgb(147, 175, 203);
+            text-shadow: 2px 3px 4px #bb7979;
+            position:relative;
+            top:-130px;
+            left:-270px;
+        }
+        ul#menu li {
+            background-color: #93afcb;
+            border-bottom: 5px solid #ffffff;
+            display: block;
+            width: 150px;
+            height: 30px;
+            margin: 2px;
+        }
+        ul#menu li a {
+            color: #fff;
+            display: block;
+            font-weight: bold;
+            line-height: 30px;
+            text-decoration: none;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+        }
+        ul#menu li.active, ul#menu li:hover {
+            background-color: #000000;
+            border-bottom: 5px solid #ffffff;
+        }
+        .pulsante {
+            padding: 20px;
+            border: none;
+            cursor: pointer;
+            margin-right:70px;
+            background-color: #010201;
+            position:fixed;
+            width: 41%;
+            color: #f8f8f7;
+            padding: 15px;
+            font-size: 20px;
+            margin: 0px 0px;
+            font-family: "Poppins" , sans-serif;
+        }
+        input {
+            box-sizing: border-box;
+            align-items: center;
+            background-repeat: no-repeat;
+            font-size: 20px;
+            padding: 14px 120px 12px 45px;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            font-family: "Poppins" , sans-serif;
+            background-color: rgba(248, 250, 248, 0.79);
+        }
+        input:focus {
+            outline: 1px solid #ffffff;
+        }
+        .elenco-content {
+            display: none;
+            position:fixed;
+            top:330px;
+            left:550px;
+            background-color: #e1dfec;
+        }
+        .elenco-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .elenco a:hover {
+            background-color: #ddd;
+        }
+        .show {
+            display: block;
+        }
+    </style>
+    </head>
+        <body>
+            <ul id="menu" style="position:fixed;left:1100px;top:10px;">
+                <li><a href="/static/visualizzaGrafici.html">Home</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </ul>
+                <header class="fixed">
+                    <nav class="top-bar">
+                        <ul class="title-area">
+                            <h1 class ="logo">HEALTHDATA</h1>
+                        </ul>
+                    </nav>
+                </header>
+                    <div style="position:relative;left:-150px;">
+                        <h2 align="center">CERCA I GRAFICI</h2>
+                            <p align="center">
+                                Clicca sul pulsante per cercare i grafici e visualizzare i dati sanitari
+                            </p>
+                                <button onclick="funzione()" class="pulsante" align="center">Grafici</button>
+                                    <div id="elenco" class="elenco-content">
+                                        <input type="text" placeholder="Search.." id="input" onkeyup="funzionefiltro()">
+                                            <a href = "/graph/sensor1">Acceleration along each axis</a>
+                                            <a href = "/graph2/sensor2">Blood volume pulse from PPG sensor </a>
+                                            <a href = "/graph3/sensor3">Electrodermal activity</a>
+                                            <a href = "/graph4/sensor4">Average heart rate</a>
+                                            <a href = "/graph5/sensor5">Time between individuals heart</a>
+                                            <a href = "/graph6/sensor6">Data from temperature sensor</a>
+                                    </div>
+                                        <script>
+                                            function funzione() {
+                                                document.getElementById("elenco").classList.toggle("show");
+                                            }
+
+                                            function funzionefiltro() {
+                                                var input, filter, ul, li, a, i;
+                                                input = document.getElementById("input");
+                                                filter = input.value.toUpperCase();
+                                                div = document.getElementById("elenco");
+                                                a = div.getElementsByTagName("a");
+                                                for (i = 0; i < a.length; i++) {
+                                                    txtValue = a[i].textContent || a[i].innerText;
+                                                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                                        a[i].style.display = "";
+                                                    } else {
+                                                        a[i].style.display = "none";
+                                                    }
+                                                }
+                                            }
+                                        </script>
+</body>
+</html>
+

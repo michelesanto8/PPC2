@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visualizzazione utenti</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #154c79;
+            overflow: hidden;
+            font-family: "Poppins" , sans-serif;
+            color: #feffff;
+            font-size: 20px;
+        }
+        .logo {
+            font-size: 50px;
+            font-family: Impact, Charcoal, sans-serif;
+            color: rgb(147, 175, 203);
+            text-shadow: 2px 3px 4px #bb7979;
+            position:relative;
+            top:-120px;
+            left:-560px;
+        }
+        ul#menu li {
+            background-color: rgb(147, 175, 203);
+            border-bottom: 5px solid #ffffff;
+            display: block;
+            width: 150px;
+            height: 30px;
+            margin: 2px;
+        }
+        ul#menu li a {
+            color: #fff;
+            display: block;
+            font-weight: bold;
+            line-height: 30px;
+            text-decoration: none;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+        }
+        ul#menu li.active, ul#menu li:hover {
+            background-color: #010201;
+            border-bottom: 5px solid #ffffff;
+        }
+        .pulsante {
+            padding: 20px;
+            border: none;
+            cursor: pointer;
+            margin-right:70px;
+            background-color: #010201;
+            width: 100%;
+            color: #f8f8f7;
+            padding: 15px;
+            font-size: 20px;
+            margin: 20px 0px;
+            font-family: "Poppins" , sans-serif;
+        }
+        input {
+            box-sizing: border-box;
+            align-items: center;
+            background-repeat: no-repeat;
+            font-size: 20px;
+            padding: 14px 120px 12px 45px;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            font-family: "Poppins" , sans-serif;
+            background-color: rgba(248, 250, 248, 0.79);
+        }
+        input:focus {
+            outline: 1px solid #ffffff;
+        }
+        .elenco-content {
+            display: none;
+            position:fixed;
+            top:350px;
+            left:550px;
+            background-color: #e1dfec;
+        }
+        .elenco-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .elenco a:hover {
+            background-color: #ddd;
+        }
+        .show {
+            display: block;
+        }
+ </style>
+ </head>
+ <body>
+ <ul id="menu" style="position:fixed;left:1100px;top:10px;">
+     <li><a href="/static/registraovisualizza.html">Home</a></li>
+     <li><a href="/logout">Logout</a></li>
+ </ul>
+ <header class="fixed">
+     <nav class="top-bar">
+         <ul class="title-area">
+             <h1 class ="logo">HEALTHDATA</h1>
+         </ul>
+     </nav>
+ </header>
+
+
+
+ <p align="center" style="position:fixed;left:250px;top:200px;"> Utente 1
+     <button onclick="funzione0()" class="pulsante" align="center">Grafici</button>
+ <div id="elenco0" class="elenco-content">
+     <input type="text" placeholder="Search.." id="input" onkeyup="funzionefiltro()">
+     <a href = "/graph/sensor1/0">Acceleration along each axis</a>
+     <a href = "/graph2/sensor2/0">Blood volume pulse from PPG sensor </a>
+     <a href = "/graph3/sensor3/0">Electrodermal activity</a>
+     <a href = "/graph4/sensor4/0">Average heart rate</a>
+     <a href = "/graph5/sensor5/0">Time between individuals heart</a>
+     <a href = "/graph6/sensor6/0">Data from temperature sensor</a>
+ </div>
+ </p>
+ <p align="center" style="position:fixed;left:450px;top:200px;"> Utente 2
+     <button onclick="funzione1()" class="pulsante" align="center">Grafici</button>
+ <div id="elenco1" class="elenco-content">
+     <input type="text" placeholder="Search.." id="input" onkeyup="funzionefiltro()">
+     <a href = "/graph/sensor1/1">Acceleration along each axis</a>
+     <a href = "/graph2/sensor2/1">Blood volume pulse from PPG sensor </a>
+     <a href = "/graph3/sensor3/1">Electrodermal activity</a>
+     <a href = "/graph4/sensor4/1">Average heart rate</a>
+     <a href = "/graph5/sensor5/1">Time between individuals heart</a>
+     <a href = "/graph6/sensor6/1">Data from temperature sensor</a>
+ </div>
+ </p>
+ <p align="center" style="position:fixed;left:650px;top:200px;"> Utente 3
+     <button onclick="funzione2()" class="pulsante">Grafici</button>
+ <div id="elenco2" class="elenco-content">
+     <input type="text" placeholder="Search.." id="input" onkeyup="funzionefiltro()">
+     <a href = "/graph/sensor1/2">Acceleration along each axis</a>
+     <a href = "/graph2/sensor2/2">Blood volume pulse from PPG sensor </a>
+     <a href = "/graph3/sensor3/2">Electrodermal activity</a>
+     <a href = "/graph4/sensor4/2">Average heart rate</a>
+     <a href = "/graph5/sensor5/2">Time between individuals heart</a>
+     <a href = "/graph6/sensor6/2">Data from temperature sensor</a>
+ </div>
+ </p>
+ <p align="center" style="position:fixed;left:850px;top:200px;"> Utente 4
+     <button onclick="funzione3()" class="pulsante">Grafici</button>
+ <div id="elenco3" class="elenco-content">
+     <input type="text" placeholder="Search.." id="input" onkeyup="funzionefiltro()">
+     <a href = "/graph/sensor1/3">Acceleration along each axis</a>
+     <a href = "/graph2/sensor2/3">Blood volume pulse from PPG sensor </a>
+     <a href = "/graph3/sensor3/3">Electrodermal activity</a>
+     <a href = "/graph4/sensor4/3">Average heart rate</a>
+     <a href = "/graph5/sensor5/3">Time between individuals heart</a>
+     <a href = "/graph6/sensor6/3">Data from temperature sensor</a>
+ </div>
+ </p>
+ <p align="center" style="position:fixed;left:1050px;top:200px;"> Utente 5
+     <button onclick="funzione4()" class="pulsante">Grafici</button>
+ <div id="elenco4" class="elenco-content">
+     <input type="text" placeholder="Search.." id="input" onkeyup="funzionefiltro()">
+     <a href = "/graph/sensor1/4">Acceleration along each axis</a>
+     <a href = "/graph2/sensor2/4">Blood volume pulse from PPG sensor </a>
+     <a href = "/graph3/sensor3/4">Electrodermal activity</a>
+     <a href = "/graph4/sensor4/4">Average heart rate</a>
+     <a href = "/graph5/sensor5/4">Time between individuals heart</a>
+     <a href = "/graph6/sensor6/4">Data from temperature sensor</a>
+ </div>
+ </p>
+ <script>
+     function funzione0() {
+         document.getElementById("elenco0").classList.toggle("show");
+     }
+          function funzione1() {
+         document.getElementById("elenco1").classList.toggle("show");
+     }
+          function funzione2() {
+         document.getElementById("elenco2").classList.toggle("show");
+     }
+          function funzione3() {
+         document.getElementById("elenco3").classList.toggle("show");
+     }
+          function funzione4() {
+         document.getElementById("elenco4").classList.toggle("show");
+     }
+     function funzionefiltro() {
+         var input, filter, ul, li, a, i;
+         input = document.getElementById("input");
+         filter = input.value.toUpperCase();
+         div = document.getElementById("elenco");
+         a = div.getElementsByTagName("a");
+         for (i = 0; i < a.length; i++) {
+             txtValue = a[i].textContent || a[i].innerText;
+             if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                 a[i].style.display = "";
+             } else {
+                 a[i].style.display = "none";
+             }
+         }
+     }
+ </script>
+ </body>
+</html>

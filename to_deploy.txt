@@ -1,0 +1,16 @@
+
+Raw Blame
+
+
+gcloud components update
+gcloud projects list
+gcloud projects create progetto-363116
+gcloud config set project progetto-363116
+
+# occorre abilitare cloud build api dalla console di google cloud
+
+# l'applicazione si deve chiamare main.py
+
+gcloud app deploy
+
+gcloud projects delete progetto-363116

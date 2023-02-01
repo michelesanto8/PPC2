@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registra l'utente o visualizza i grafici</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            display: flex;
+            position:relative;
+            font-family: "Poppins" , sans-serif;
+            font-size: 20px;
+            color:rgb(254, 255, 255);
+            background-color: #154c79;
+        }
+        .logo {
+            font-size: 50px;
+            font-family: Impact, Charcoal, sans-serif;
+            color: rgb(147, 175, 203);
+            text-shadow: 1px 2px 3px #bb7979;
+        }
+        ul#menu li {
+            background-color: #93afcb;
+            border-bottom: 5px solid #ffffff;
+            display: block;
+            width: 150px;
+            height: 30px;
+            margin: 2px;
+        }
+        ul#menu li a {
+            color: #fff;
+            display: block;
+            font-weight: bold;
+            line-height: 30px;
+            text-decoration: none;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+        }
+        ul#menu li.active, ul#menu li:hover {
+            background-color: #000000;
+            border-bottom: 5px solid #ffffff;
+        }
+        .pulsante {
+            position: relative;
+            top:350px;
+            left:-210px;
+            height:200px;
+            width:250px;
+            padding: 50px 70px 12px 40px;
+            cursor: pointer;
+            background-color: #010201;
+            color: #f8f8f7;
+            padding: 70px 0px;
+            font-size: 25px;
+            margin: 20px 20px;
+            font-family: "Poppins" , sans-serif;
+        }
+    </style>
+    </head>
+        <body>
+        <ul id="menu" style="position:fixed;left:1100px;top:0px;">
+            <li><a href="/static/login1.html">Home</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+            <header class="fixed">
+                <nav class="top-bar">
+                    <ul class="title-area">
+                        <h1 class ="logo">HEALTHDATA</h1>
+                    </ul>
+                </nav>
+            </header>
+                <div>
+                    <h1 style="position:relative;top:180px;left:280px;">BENTORNATO!</h1>
+                    <h2 style="position:relative;top:160px;left:260px;">Come vuoi proseguire?</h2>
+                </div>
+                    <form action="registrazione.html" method="get">
+                        <button type="submit" name="login" class="pulsante">Registra<br>un utente</button>
+                    </form>
+                    <form action="visualizzaUtenti.html" method="get">
+                        <button type="submit" name="login" class="pulsante">Visualizza i grafici<br>degli utenti</button>
+                    </form>
+
+        </body>
+</html>
+
