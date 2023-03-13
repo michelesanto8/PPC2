@@ -452,7 +452,7 @@ def alert(s,grafico):
     email_password = password
     email_receiver = current_user.username+"@gmail.com"
     subject = "ALERT:"+ str(grafico)
-    body = "Ciao, " + current_user.username + "\n Attenzione! È stata rilveta un'anomalia: Hai superato il valore soglia di "+str(s)+" \nVisita il sito https://pervasiveandcloudcomputing2.oa.r.appspot.com per maggiori informazioni."
+    body = "Ciao, " + current_user.username + "\n Attenzione! È stata rilveta un'anomalia: Hai superato il valore soglia di "+str(s)+" \nVisita il sito http://127.0.0.1:8080 per maggiori informazioni."
     e_m = EmailMessage()
     e_m['From'] = email_sender
     e_m['To'] = email_receiver
@@ -492,7 +492,7 @@ def sogliabvp(s,nome):
     for j in range(len(mediambvp)):
         if float(mediambvp[j]) > s:
             max = mediambvp[j]
-    return round(float(max),2)
+    return float(max)
 
 def sogliaeda(s, nome):
     mediameda = []
@@ -501,7 +501,7 @@ def sogliaeda(s, nome):
     for j in range(len(mediameda)):
         if float(mediameda[j]) > s:
             max = mediameda[j]
-    return round(float(max),2)
+    return float(max)
 
 def sogliahr(s, nome):
     mediamhr = []
@@ -510,7 +510,7 @@ def sogliahr(s, nome):
     for j in range(len(mediamhr)):
         if float(mediamhr[j]) > s:
             max = mediamhr[j]
-    return round(float(max),2)
+    return float(max)
 
 def sogliaibi(s, nome):
     mediamibi = []
@@ -519,7 +519,7 @@ def sogliaibi(s, nome):
     for j in range(len(mediamibi)):
         if float(mediamibi[j]) > s:
             max = mediamibi[j]
-    return round(float(max),2)
+    return float(max)
 
 def sogliaskintemperature(s, nome):
     mediam_skin_temperature = []
@@ -528,7 +528,7 @@ def sogliaskintemperature(s, nome):
     for j in range(len(mediam_skin_temperature)):
         if float(mediam_skin_temperature[j]) > s:
             max = mediam_skin_temperature[j]
-    return round(float(max),2)
+    return float(max)
 
 @app.route('/graph/sensor1/<nome>', methods=['GET'])
 @login_required
@@ -713,5 +713,4 @@ def logout():
         return redirect('/static/login1.html')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8081, debug=True)
-
+    app.run(host='0.0.0.0', port=8080, debug=True)

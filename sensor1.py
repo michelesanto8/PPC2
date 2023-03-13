@@ -7,7 +7,7 @@ from requests import get,post
 from secret import secret
 from main import logincred
 #sensore che manda i dati al server
-base_url = 'http://192.168.1.145:8000'
+base_url = 'https://pervasiveandcloudcomputing2.oa.r.appspot.com'
 
 
 for i in range(len(logincred)):

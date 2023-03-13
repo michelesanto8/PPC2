@@ -1,5 +1,8 @@
 flask
-flask-login
+flask_login
 google-cloud-firestore
 google~=3.0.0
-requests~=2.28.1
+pandas
+numpy
+bottleneck
+
